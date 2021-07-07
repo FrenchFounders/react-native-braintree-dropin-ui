@@ -43,7 +43,7 @@ dependencies {
 rootProject.allprojects {
     repositories {
         maven {
-            url  "https://cardinalcommerce.bintray.com/android"
+            url  "https://cardinalcommerceprod.jfrog.io/artifactory/android"
             credentials {
                 username 'a.borel@frenchfounders.com'
                 password 'AKCp8jQwmE845yxcJpm9kQgWFUikdqFh2MV12qNK1CawX86TcurRvB6bgL53PA4QqLj8tkBgX'
