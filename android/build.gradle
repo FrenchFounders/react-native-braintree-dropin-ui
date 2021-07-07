@@ -45,8 +45,8 @@ rootProject.allprojects {
         maven {
             url  "https://cardinalcommerce.bintray.com/android"
             credentials {
-                username 'braintree-team-sdk@cardinalcommerce'
-                password '220cc9476025679c4e5c843666c27d97cfb0f951'
+                username 'a.borel@frenchfounders.com'
+                password 'AKCp8jQwmE845yxcJpm9kQgWFUikdqFh2MV12qNK1CawX86TcurRvB6bgL53PA4QqLj8tkBgX'
             }
         }
     }
