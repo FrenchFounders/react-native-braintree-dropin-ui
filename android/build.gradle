@@ -45,9 +45,25 @@ rootProject.allprojects {
         maven {
             url  "https://cardinalcommerceprod.jfrog.io/artifactory/android"
             credentials {
-                username 'a.borel@frenchfounders.com'
-                password 'AKCp8jQwmE845yxcJpm9kQgWFUikdqFh2MV12qNK1CawX86TcurRvB6bgL53PA4QqLj8tkBgX'
+                username 'braintree_team_sdk'
+                password 'AKCp8jQcoDy2hxSWhDAUQKXLDPDx6NYRkqrgFLRc3qDrayg6rrCbJpsKKyMwaykVL8FWusJpp'
             }
         }
     }
 }
+
+components.all {
+    allVariants {
+        withDependencies { deps ->
+            deps.each { dep ->
+                if (dep.group == 'net.minidev' && dep.name =='json-smart') {
+                    dep.version {
+                        prefer "2.3"
+                    }
+                    dep.because "resolving dependencies issue"
+                }
+            }
+        }
+    }
+}
+
