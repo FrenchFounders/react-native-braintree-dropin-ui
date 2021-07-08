@@ -37,6 +37,21 @@ dependencies {
     implementation 'com.braintreepayments.api:data-collector:2.+'
     implementation 'com.braintreepayments.api:drop-in:4.+'
     implementation 'com.facebook.react:react-native:+'
+    
+    components.all {
+        allVariants {
+            withDependencies { deps ->
+                deps.each { dep ->
+                    if (dep.group == 'net.minidev' && dep.name =='json-smart') {
+                        dep.version {
+                            prefer "2.3"
+                        }
+                        dep.because "resolving dependencies issue"
+                    }
+                }
+            }
+        }
+    }
 }
 
 // https://developers.braintreepayments.com/guides/3d-secure/migration/android/v3
@@ -51,19 +66,3 @@ rootProject.allprojects {
         }
     }
 }
-
-components.all {
-    allVariants {
-        withDependencies { deps ->
-            deps.each { dep ->
-                if (dep.group == 'net.minidev' && dep.name =='json-smart') {
-                    dep.version {
-                        prefer "2.3"
-                    }
-                    dep.because "resolving dependencies issue"
-                }
-            }
-        }
-    }
-}
-
